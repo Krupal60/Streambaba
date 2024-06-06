@@ -1,0 +1,58 @@
+<!-- recycler_view_item_layout.xml -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true"
+    android:id="@+id/mainPlay"
+    android:background="?attr/selectableItemBackground"
+    android:padding="12dp">
+    <!-- Icon at the End -->
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:id="@+id/download"
+        android:layout_width="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:layout_height="30dp"
+        app:icon="@drawable/ic_download"
+        android:focusable="true"
+        android:clickable="true"
+        app:iconTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp" />
+
+
+    <!-- Icon at the Front -->
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:focusable="true"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Name TextView -->
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintStart_toEndOf="@+id/play"
+        app:layout_constraintEnd_toStartOf="@+id/download"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

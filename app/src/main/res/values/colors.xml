@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03CDE7</color>
+    <color name="colorSecondaryContainer">#F3011B1E</color>
+    <color name="colorPrimarySecond">@color/colorPrimary</color>
+    <color name="colorSearch">#303135</color> <!--#3444D1 @color/itemBackground-->
+    <color name="colorOngoing">#F53B66</color> <!--FF8181-->
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#3b65f5</color> <!-- 818fff-->
+
+    <color name="primaryGrayBackground">#111112</color> <!--0f0f10 0E0E10 303135 2B2C30-->
+    <color name="primaryBlackBackground">#000000</color> <!--1C1C20 191a1f 19181E 202125 1C1C20-->
+    <color name="iconGrayBackground">#0F0F10</color> <!--141419 202125-->
+    <color name="boxItemBackground">#000000</color> <!-- 17171B 1B1B20-->
+
+    <color name="textColor">#e9eaee</color> <!--FFF-->
+    <color name="semiWhite">#1AFFFFFF</color> <!--FFF-->
+    <color name="grayTextColor">#9ba0a4</color> <!-- 5e5f62-->
+    <color name="grayShimmer">#DCDCDC</color> <!-- 5e5f62-->
+
+    <color name="searchColorTransparent">#1AFFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+
+    <color name="whiteText">#FFF</color>
+    <color name="blackText">#000</color>
+
+    <color name="progressBackgroundColor">#1AFFFFFF</color>
+
+    <color name="dubColorText">#121950</color>
+    <color name="amoledModeLight">#121213</color>
+
+    <color name="dubColorBg">#3B65F5</color>
+    <color name="subColorText">#571711</color>
+    <color name="subColorBg">#F53B66</color>
+    <color name="typeColorText">#BEC8FF</color>
+    <color name="typeColorBg">?attr/colorPrimaryDark</color>
+    <color name="ratingColor">#4C3115</color>
+    <color name="ratingColorBg">#FFA662</color>
+
+    <color name="adultColor">#FF6F63</color>
+
+    <color name="video_ripple">#80FFFFFF</color>
+    <color name="video_button_ripple">#32FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="black_dark_overlay">#8F000000</color>
+    <color name="darkBarTransparent">#C0121212</color>
+    <color name="skipOpTransparent">#4D121212</color>
+    <color name="darkBar">#121212</color>
+    <color name="videoProgress">#66B5B5B5</color>
+
+
+
+</resources>

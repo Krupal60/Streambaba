@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:enterAnim="@anim/pop_in"
+    app:exitAnim="@anim/pop_out"
+    app:popEnterAnim="@anim/pop_in"
+    app:popExitAnim="@anim/pop_out"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.stream.baba.ui.HomeFragment"
+        android:label="@string/title_home"
+        app:enterAnim="@anim/pop_in"
+        app:exitAnim="@anim/pop_out"
+        app:popEnterAnim="@anim/pop_in"
+        app:popExitAnim="@anim/pop_out"
+        tools:layout="@layout/fragment_home"/>
+
+    <action
+        android:id="@+id/action_navigation_home_to_homeSearchFragment"
+        app:destination="@id/homeSearchFragment"
+        app:popUpTo="@id/navigation_home"
+        app:popUpToInclusive="true"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"/>
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_quick_search"
+            app:destination="@id/navigation_search"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+        <action
+            android:id="@+id/action_navigation_home_to_settingFragment"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+        <action
+            android:id="@+id/action_navigation_home_to_resultFragment"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.stream.baba.ui.SearchFragment"
+        android:label="@string/title_search"
+        app:enterAnim="@anim/pop_in"
+        app:exitAnim="@anim/pop_out"
+        app:popEnterAnim="@anim/pop_in"
+        app:popExitAnim="@anim/pop_out"
+        tools:layout="@layout/fragment_search"/>
+        <action
+            android:id="@+id/action_navigation_search_pop_including_navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+        <action
+            android:id="@+id/action_navigation_search_to_settingFragment2"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.stream.baba.ui.SettingFragment"
+        android:label="fragment_setting"
+        app:enterAnim="@anim/pop_in"
+        app:exitAnim="@anim/pop_out"
+        app:popEnterAnim="@anim/pop_in"
+        app:popExitAnim="@anim/pop_out"
+        tools:layout="@layout/fragment_setting" />
+        <action
+            android:id="@+id/action_settingFragment_pop_including_navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/pop_in"
+            app:exitAnim="@anim/pop_out"
+            app:popEnterAnim="@anim/pop_in"
+            app:popExitAnim="@anim/pop_out"/>
+
+            <action
+                android:id="@+id/action_navigation_settings_to_navigation_settings_providers"
+                app:destination="@id/navigation_settings_providers"
+                app:enterAnim="@anim/pop_in"
+                app:exitAnim="@anim/pop_out"
+                app:popEnterAnim="@anim/pop_in"
+                app:popExitAnim="@anim/pop_out"/>
+            <action
+                android:id="@+id/action_navigation_settings_to_navigation_settings_updates"
+                app:destination="@id/navigation_settings_updates"
+                app:enterAnim="@anim/pop_in"
+                app:exitAnim="@anim/pop_out"
+                app:popEnterAnim="@anim/pop_in"
+                app:popExitAnim="@anim/pop_out"/>
+            <action
+                android:id="@+id/action_navigation_settings_to_navigation_settings_account"
+                app:destination="@id/navigation_settings_account"
+                app:enterAnim="@anim/pop_in"
+                app:exitAnim="@anim/pop_out"
+                app:popEnterAnim="@anim/pop_in"
+                app:popExitAnim="@anim/pop_out"/>
+
+    <action
+        android:id="@+id/action_navigation_settings_to_navigation_settings_general"
+        app:destination="@id/navigation_settings_general"
+        app:enterAnim="@anim/pop_in"
+        app:exitAnim="@anim/pop_out"
+        app:popEnterAnim="@anim/pop_in"
+        app:popExitAnim="@anim/pop_out"/>
+
+    <fragment
+        android:id="@+id/navigation_settings_general"
+        android:name="com.stream.baba.ui.settings.SettingsGeneral"
+        android:label="setting_general" />
+    <fragment
+        android:id="@+id/navigation_settings_providers"
+        android:name="com.stream.baba.ui.settings.SettingsProviders"
+        android:label="fragment_settings_providers" />
+
+    <fragment
+        android:id="@+id/navigation_settings_updates"
+        android:name="com.stream.baba.ui.settings.SettingsUpdates"
+        android:label="fragment_settings_updates" />
+    <fragment
+        android:id="@+id/navigation_settings_account"
+        android:name="com.stream.baba.ui.settings.SettingsAccount"
+        android:label="fragment_settings_account"
+        />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.stream.baba.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out" >
+        <action
+            android:id="@+id/action_resultFragment_to_playerFragment"
+            app:destination="@id/playerFragment"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_resultFragment_to_navigation_home"
+        app:destination="@id/navigation_home"
+        app:popUpTo="@id/navigation_home"
+        app:popUpToInclusive="true"
+        app:enterAnim="@anim/slide_in"
+        app:exitAnim="@anim/slide_out"
+        app:popEnterAnim="@anim/slide_in"
+        app:popExitAnim="@anim/slide_out"
+        />
+    <fragment
+        android:id="@+id/homeSearchFragment"
+        android:name="com.stream.baba.ui.HomeSearchFragment"
+        android:label="fragment_home_search"
+        tools:layout="@layout/fragment_home_search" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/playerFragment"
+        android:name="com.stream.baba.ui.PlayerFragment"
+        android:label="PlayerFragment" />
+
+</navigation>

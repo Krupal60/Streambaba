@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.ChipGroup android:layout_width="match_parent"
+    style="@style/ChipParent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="@color/primaryBlackBackground"
+    android:id="@+id/home_select_group"
+    app:singleSelection="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <com.google.android.material.chip.Chip
+        android:id="@+id/Action"
+      android:background="@color/primaryBlackBackground"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Action" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/movies"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movies" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/TV_Shows"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TV_Shows" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Dramas"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Dramas" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/anime"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anime" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Horror"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Horror" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Romantic"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Romantic" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/documentaries"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/documentaries" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Thrillers"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Thrillers" />
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Sports"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sports" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Sci_Fi"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sci_Fi" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/Fantasy"
+        style="@style/ChipFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Fantasy" />
+
+</com.google.android.material.chip.ChipGroup>

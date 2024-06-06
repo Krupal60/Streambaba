@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/result_root"
+    style="@style/DarkFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/primaryBlackBackground"
+    tools:context=".ui.ResultFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/result_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_alpha="0.2"
+        app:shimmer_duration="2000"
+        app:shimmer_highlight_alpha="0.3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <include layout="@layout/loading_poster1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="vertical">
+
+
+                    <include layout="@layout/loading_line" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:orientation="vertical">
+
+                            <include layout="@layout/loading_line_short" />
+
+                            <include layout="@layout/loading_line_short" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include layout="@layout/loading_line_short" />
+
+                            <include layout="@layout/loading_line_short" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                tools:ignore="ContentDescription" />
+
+            <include layout="@layout/loading_layout" />
+
+            <include layout="@layout/loading_episode"/>
+
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/result_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="15dp" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="15dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/result_poster_background_holder"
+                android:layout_width="140dp"
+                android:layout_height="215dp"
+                android:elevation="10dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/back_button">
+
+                <ImageView
+                    android:id="@+id/result_poster_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/movies_poster"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back_button"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:layout_width="62dp"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/back"
+                android:elevation="10dp"
+                android:gravity="center"
+                app:cornerRadius="25dp"
+                app:elevation="10dp"
+                app:icon="@drawable/ic_baseline_arrow_back_24"
+                app:iconGravity="textEnd"
+                app:iconSize="25dp"
+                app:iconTint="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/result_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:maxLines="3"
+                android:textColor="?attr/textColor"
+                android:textSize="21sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/result_poster_background_holder"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@+id/result_poster_background_holder"
+                app:layout_constraintTop_toBottomOf="@+id/back_button"
+                tools:text="The Perfect Run The Perfect Run" />
+
+            <!-- Meta information TextViews -->
+
+            <TextView
+                android:id="@+id/result_meta_type"
+                style="@style/ResultInfoText"
+                android:layout_marginTop="12dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/result_title"
+                app:layout_constraintTop_toBottomOf="@+id/result_title"
+                tools:text="Movie" />
+
+            <TextView
+                android:id="@+id/result_meta_laguage"
+                style="@style/ResultInfoText"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/result_meta_type"
+                app:layout_constraintStart_toEndOf="@id/result_meta_type"
+                app:layout_constraintTop_toTopOf="@+id/result_meta_type"
+                tools:text="English" />
+
+            <TextView
+                android:id="@+id/result_meta_year"
+                style="@style/ResultInfoText"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/result_meta_type"
+                app:layout_constraintTop_toBottomOf="@+id/result_meta_type"
+                tools:text="2022" />
+
+            <TextView
+                android:id="@+id/result_meta_rating"
+                style="@style/ResultInfoText"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/result_meta_year"
+                app:layout_constraintStart_toEndOf="@id/result_meta_year"
+                app:layout_constraintTop_toTopOf="@+id/result_meta_year"
+                tools:text="Rated: 8.5/10.0" />
+
+            <TextView
+                android:id="@+id/txt_dis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/description"
+                android:textColor="?attr/textColor"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_poster_background_holder" />
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/txt_dis">
+
+                <TextView
+                    android:id="@+id/result_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:ellipsize="end"
+                    android:maxLength="600"
+                    android:textColor="?attr/textColor"
+                    android:textSize="15sp"
+                    tools:text="Ryaicksave Romano is an eccentricis  n Quicksave Romano is an eccentric adventurer with a strange power: he can create a save-point in time and redo his life whenever he dies. Arriving in New Rome, the glitzy capital of sin of a rebuilding Europe, he finds the city torn between mega-corporations, sponsored heroes, superpowered criminals, and true monsters. It's a time of chaos, where potions can grant the power to rule the world and dangers lurk everywhere." />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/background_shadow"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/result_tag_holder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/result_tags"
+                android:textColor="?attr/textColor"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <!-- ChipGroup for tags -->
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/result_tag"
+                style="@style/ChipParent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_tag_holder" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/result_episode_select"
+                style="@style/MultiSelectButton"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:drawableEnd="@drawable/baseline_keyboard_arrow_down_24"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_tag" />
+
+            <TextView
+                android:id="@+id/txt_ep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/episode"
+                android:textColor="?attr/textColor"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:visibility="visible"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_episode_select" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/result_play_movie"
+                style="@style/WhiteButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:text="@string/play_movie"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/ic_baseline_play_arrow_24"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="25dp"
+                app:iconTint="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_episode_select" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/result_downlode_movie"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="62dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:contentDescription="@string/download"
+                android:text="@string/download"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="30dp"
+                app:icon="@drawable/ic_download"
+                app:iconGravity="textStart"
+                app:iconPadding="10dp"
+                app:iconSize="25dp"
+                app:iconTint="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/result_play_movie" />
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@+id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/txt_ep">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/result_master_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/raw_ep_result" />
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

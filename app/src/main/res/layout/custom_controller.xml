@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/black_dark_overlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/player_loading_overlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/exo_subtitle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/player_go_back_holder"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/exo_main_text"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:foregroundTint="@color/white"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="12dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="Hello world" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/player_go_back_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/back"
+                android:foregroundTint="@color/white"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/player_go_back"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:background="@drawable/video_tap_button_always_white"
+                android:clickable="true"
+                android:contentDescription="@string/back"
+                android:focusable="true" />
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@id/exo_subtitle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/video_tap_button_always_white"
+            android:clickable="true"
+            android:contentDescription="@string/back"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/play_loading"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
+
+        <ProgressBar
+            android:id="@+id/exo_progressBar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="?attr/colorPrimary"
+            android:padding="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@id/exo_play_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_play_arrow_24" />
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/player_rew_holder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/play_loading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
+
+        <TextView
+            android:id="@+id/exo_rew_text"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:text="@string/_5" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/exo_rew"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleX="-1"
+            android:tintMode="src_in"
+            app:srcCompat="@drawable/netflix_skip_forward"
+            app:tint="@color/white" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/player_ffwd_holder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/play_loading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:srcCompat="@drawable/netflix_skip_forward">
+
+        <TextView
+            android:id="@+id/exo_ffwd_text"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/_5"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/exo_ffwd"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:tintMode="src_in"
+            app:srcCompat="@drawable/netflix_skip_forward"
+            app:tint="@color/white" />
+    </FrameLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/player_video_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/player_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@id/exo_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:minWidth="50dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="15:30" />
+
+
+        <androidx.media3.ui.DefaultTimeBar
+            android:id="@id/exo_progress"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            app:bar_height="2dp"
+            android:layout_gravity="center_vertical"
+            app:played_color="?attr/colorPrimary"
+            app:scrubber_color="?attr/colorPrimary"
+            app:buffered_color="@color/white"
+            app:scrubber_dragged_size="26dp"
+            app:scrubber_enabled_size="24dp"
+            app:unplayed_color="@color/videoProgress" />
+
+
+        <TextView
+            android:id="@id/exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="20dp"
+            android:includeFontPadding="false"
+            android:minWidth="50dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="23:20" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/player_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layoutDirection="ltr"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/player_lock_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/exo_prev"
+                style="@style/VideoButton"
+                android:text="@string/previous_episode"
+                app:icon="@drawable/baseline_skip_previous_24" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/exo_audio_track"
+                style="@style/VideoButton"
+                android:layout_height="40dp"
+                android:text="@string/audio"
+                app:icon="@drawable/ic_audio" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/playerResizeBtt"
+                style="@style/VideoButton"
+                android:layout_height="40dp"
+                android:text="@string/resize"
+                app:icon="@drawable/ic_baseline_aspect_ratio_24" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@id/exo_next"
+                style="@style/VideoButton"
+                android:text="@string/next_episode"
+                app:icon="@drawable/ic_baseline_skip_next_24" />
+
+
+        </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

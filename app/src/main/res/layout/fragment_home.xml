@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|top"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/home_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/home_loading_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:paddingTop="40dp"
+                app:shimmer_auto_start="true"
+                app:shimmer_base_alpha="0.2"
+                app:shimmer_duration="2000"
+                app:shimmer_highlight_alpha="0.3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="125dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="15dp"
+                            android:background="@color/grayShimmer"
+                            android:translationX="-164dp"
+                            app:cardCornerRadius="3dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="148dp"
+                            android:layout_height="234dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="15dp"
+                            android:background="@color/grayShimmer"
+                            app:cardCornerRadius="3dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="125dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="15dp"
+                            android:background="@color/grayShimmer"
+                            android:translationX="164dp"
+                            app:cardCornerRadius="3dp" />
+                    </FrameLayout>
+
+                    <include layout="@layout/loading_line_short_center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/loading_list" />
+
+                        <include layout="@layout/loading_list" />
+
+                        <include layout="@layout/loading_list" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/home_preview"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <com.kenilt.loopingviewpager.widget.LoopingViewPager
+                android:id="@+id/autoScrollViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/primaryBlackBackground"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:alpha="0.85"
+                    android:background="@drawable/search_background"
+                    android:visibility="visible">
+
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/main_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:iconifiedByDefault="false"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:nextFocusRight="@+id/search_filter"
+                        android:nextFocusDown="@id/search_autofit_results"
+                        android:paddingStart="-10dp"
+                        android:visibility="visible"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@color/transparent"
+                        app:queryHint="@string/search_hint"
+                        app:searchIcon="@drawable/search_icon"
+                        tools:ignore="RtlSymmetry">
+
+
+                        <androidx.core.widget.ContentLoadingProgressBar
+                            android:id="@+id/search_loading_bar"
+                            style="@style/Widget.AppCompat.ProgressBar"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="-35dp"
+                            android:foregroundTint="@color/white"
+                            android:progressBackgroundTint="@color/colorPrimary"
+                            android:progressTint="@color/white"
+                            android:visibility="gone">
+
+                        </androidx.core.widget.ContentLoadingProgressBar>
+                        <!--app:queryHint="@string/search_hint"
+                         android:background="@color/grayBackground" @color/itemBackground
+                                    app:searchHintIcon="@drawable/search_white"
+                                    -->
+                    </androidx.appcompat.widget.SearchView>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/homeplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/autoScrollViewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/home_preview_play"
+                    style="@style/WhiteButton"
+                    android:layout_width="120dp"
+                    android:layout_gravity="center"
+                    android:text="@string/home_play"
+                    android:textSize="16sp"
+                    app:cornerRadius="20dp"
+                    app:icon="@drawable/ic_baseline_play_arrow_24" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/home_preview_info"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="@string/home_info"
+                    android:textColor="?attr/white"
+                    android:textSize="16sp"
+                    app:cornerRadius="20dp"
+                    app:icon="@drawable/ic_outline_info_24"
+                    app:iconGravity="textStart"
+                    app:iconPadding="10dp"
+                    app:iconSize="20dp"
+                    app:iconTint="?attr/white" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_master_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="afterDescendants"
+                android:paddingTop="5dp"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/homepage_parent" />
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

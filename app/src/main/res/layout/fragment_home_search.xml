@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeSearchFragment">
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_button"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="62dp"
+        android:layout_height="42dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="15dp"
+        android:backgroundTint="@color/white"
+        app:cornerRadius="25dp"
+        android:elevation="10dp"
+        app:elevation="10dp"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:iconSize="28dp"
+        android:gravity="center"
+        app:iconGravity="textEnd"
+        app:iconTint="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginEnd="15dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/back_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/back_button"
+        app:layout_constraintTop_toTopOf="@+id/back_button">
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/main_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/search_background"
+            android:iconifiedByDefault="false"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:nextFocusRight="@+id/search_filter"
+            android:nextFocusDown="@id/search_autofit_results"
+            android:paddingStart="-10dp"
+            android:visibility="visible"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@color/transparent"
+            app:queryHint="@string/search_hint"
+            app:searchIcon="@drawable/search_icon"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/search_loading_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="-65dp"
+                android:foregroundTint="@color/white"
+                android:progressBackgroundTint="@color/colorPrimary"
+                android:progressTint="@color/white"
+                android:visibility="gone">
+
+            </androidx.core.widget.ContentLoadingProgressBar>
+
+        </androidx.appcompat.widget.SearchView>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_search_master_recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        tools:listitem="@layout/home_result_grid"
+        app:spanCount="3"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

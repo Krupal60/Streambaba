@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference
+        android:key="@string/locale_key"
+        android:title="@string/app_language"
+        android:icon="@drawable/ic_baseline_language_24" />
+
+
+    <Preference
+            android:key="@string/legal_notice_key"
+            android:title="@string/legal_notice"
+            android:icon="@drawable/ic_baseline_warning_24" />
+
+</PreferenceScreen>

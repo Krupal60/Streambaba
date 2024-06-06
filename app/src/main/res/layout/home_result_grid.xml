@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  android:layout_width="114dp"
+        android:layout_height="180dp"-->
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    android:backgroundTint="@color/transparent"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="3dp"
+        android:paddingStart="0dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_holder"
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:elevation="10dp"
+            app:cardBackgroundColor="?attr/primaryGrayBackground"
+            app:cardCornerRadius="12dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/search_poster_img_des"
+                android:duplicateParentState="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img" />
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/imageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:minLines="2"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="?attr/textColor"
+            android:textSize="13sp"
+            tools:text="The Perfect Run\nThe Perfect Run\nhello" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
